@@ -1,0 +1,52 @@
+:root {
+    --primary-color: #78C0E0;
+    --secondary-color: #EEE3AB;
+    --font-main: 'Segoe UI', sans-serif;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    padding: 20px;
+}
+
+nav {
+    padding: 20px 0;
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: right;
+}
+
+nav a {
+    padding: 0 20px;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.book-card {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-content: center;
+}
+
+.filter-panel {
+    border: 2px solid var(--primary-color);
+    margin: 15px;
+}
+
+.book-info {
+    border-right: 1px solid black;
+    padding: 10px;
+}
+
+.book-details {
+    padding: 10px;
+}

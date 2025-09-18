@@ -1,0 +1,51 @@
+h2{
+    color: rgb(43, 99, 162);
+}
+header{
+    text-align: center;
+    border-bottom: 1px solid rgb(161, 156, 156);
+}
+.content{
+    margin: auto;
+    max-width: 700px;
+    border: 1px solid rgb(161, 156, 156) ;
+    border-radius: 3px;
+}
+.main{
+    padding: auto;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+
+}
+
+li {
+    margin-top: 20px;
+}
+
+
+.italic{
+    font-style: italic;
+}
+div {
+    padding: 5%;
+    font-size: 20px;
+}
+footer img{
+    width: 150px;
+    height: 150px;
+    margin: 0 10px;
+}
+
+body.dark {
+    background-color: #333;
+    color: white;
+}
+
+body.light {
+    background-color: white;
+    color: black;
+}
+

@@ -1,53 +1,69 @@
-const bookCollection = [
-    {
-        bookId: 1,
-        bookTitle: 'Septimus Heap Book One: Magyk',
-        releaseDate: 'July 5, 2022',
-        bookDescription: 'If you enjoy stories about seventh sons of seventh sons and magyk this is the book for you.',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/en/5/5f/Magkycover2.jpg',
-        imageAlt: 'Book cover for Septimus Heap 1',
-        recommendedAges: '10-14',
-        bookGenre: 'Fantasy',
-        bookRating: '****'
-    },
-    {
-        bookId: 2,
-        bookTitle: 'Magnus Chase Book One: Sword of Summer',
-        releaseDate: 'December 12, 2021',
-        bookDescription: 'The anticipated new novel by Rick Riordan... Norse Mythology, and the end result is good.',
-        imageUrl: 'https://books.google.com/books/content/images/frontcover/xWuyBAAAQBAJ?fife=w300',
-        imageAlt: 'Book cover for Magnus Chase 1',
-        recommendedAges: '12-16',
-        bookGenre: 'Fantasy',
-        bookRating: '⭐⭐⭐⭐'
-    }
-];
+const articles = [
+	{
+		id: 1,
+		title: 'Septimus Heap Book One: Magyk',
+		date: 'July 5, 2022',
+		description:
+			'If you enjoy stories about seventh sons of seventh sons and magyk this is the book for you.',
+		imgSrc: 'https://upload.wikimedia.org/wikipedia/en/5/5f/Magkycover2.jpg',
+		imgAlt: 'Book cover for Septimus Heap 1',
+		ages: '10-14',
+		genre: 'Fantasy',
+		stars: '****'
+	},
+	{
+		id: 2,
+		title: 'Magnus Chase Book One: Sword of Summer',
+		date: 'December 12, 2021',
+		description:
+			'The anticipated new novel by Rick Riordan. After Greek mythology (Percy Jackson), Greek/Roman (Heroes of Olympus), and Egyptian (Kane Chronicles), Rick decides to try his hand with Norse Mythology, and the end result is good.',
+		imgSrc:
+			'https://books.google.com/books/content/images/frontcover/xWuyBAAAQBAJ?fife=w300',
+		imgAlt: 'Book cover for Magnus Chase 1',
+		ages: '12-16',
+		genre: 'Fantasy',
+		stars: '⭐⭐⭐⭐'
+	},
+	{
+		id: 3,
+		title: "Belgariad Book One: Pawn of Prophecy",
+		date: "Feb 12, 2022",
+		description:
+			"A fierce dispute among the Gods and the theft of a powerful Orb leaves the World divided into five kingdoms. Young Garion, with his 'Aunt Pol' and an elderly man calling himself Wolf --a father and daughter granted near-immortality by one of the Gods -- set out on a complex mission.",
+		imgSrc:
+			"https://images-na.ssl-images-amazon.com/images/I/41ZxXA+nInL.jpg",
+		imgAlt: "Book cover for Pawn of Prophecy",
+		ages: "12-16",
+		genre: "Fantasy",
+		stars: "⭐⭐⭐⭐⭐"
+	}
+]
 
-const bookDisplayArea = document.querySelector(".book-display");
-
-for (let index = 0; index < bookCollection.length; index++) {
-    const currentBook = bookCollection[index];
-
-    const bookElement = document.createElement("div");
-    bookElement.classList.add("book-card");
-
-    bookElement.innerHTML = `
-        <div class="book-card">
-            <div class="book-info">
-                <p class="release-date">${currentBook.releaseDate}</p>
-                <p class="age-range">${currentBook.recommendedAges}</p>
-                <p class="genre">${currentBook.bookGenre}</p>
-                <p class="rating">${currentBook.bookRating}</p>
-            </div>
-            <div class="book-details">
-                <h3 class="title">${currentBook.bookTitle}</h3>
-                <figure>
-                    <img src="${currentBook.imageUrl}" alt="${currentBook.imageAlt}">
-                </figure>
-                <p class="description">${currentBook.bookDescription}</p>
-            </div>
+function articleTemplate(article) {
+	return `<div class="article-container">
+        <div class="article-info">
+          <p class="article-date">${article.date}</p>
+          <p>${article.ages}</p>
+          <p>${article.genre}</p>
+          <p>${article.stars}</p>
         </div>
-    `;
-
-    bookDisplayArea.appendChild(bookElement);
+        <div class="article-image-and-content">
+          <h2 class="article-title">${article.title}</h2>
+          <img src="${article.imgSrc}" alt="${article.imgAlt}" class="article-image">
+          <div class="article-content">
+            <p>${article.description}</p>
+          </div>
+        </div>
+      </div>`;
 }
+
+function renderArticles() {
+  const articlesContainer = document.getElementById('book-posts');
+  articles.forEach(article => {
+    const articleElement = document.createElement('article');
+    articleElement.innerHTML = articleTemplate(article);
+    articlesContainer.appendChild(articleElement);
+  });
+}
+
+renderArticles();

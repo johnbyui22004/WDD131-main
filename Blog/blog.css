@@ -1,52 +1,116 @@
+
 :root {
-    --primary-color: #78C0E0;
-    --secondary-color: #EEE3AB;
-    --font-main: 'Segoe UI', sans-serif;
+  --gold: #E36414;
+  --red: #9A031E;
+  --dark: #0F4C5C;
+  --body-fonts: helvetica, arial, sans-serif;
+  --headline-font: lora, impact, sans-serif;
 }
 
-header, footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
+/* Body */
+body {
+  font-family: var(--body-fonts);
+  margin: 0;
 }
 
-h1 {
-    padding: 20px;
+/* Main */
+main {
+  margin: 16px;
+  display: grid;
+  grid-template-columns: 7fr 2fr;
+  padding-top: 16px;
+}
+
+/* Skip to main content */
+.skip-to-content a {
+  position: absolute;
+  top: -40px;
+  color: var(--red);
+}
+
+.skip-to-content a:focus {
+  top: 0px;
+}
+
+/* Header */
+header h1 {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+/* Nav bar */
+nav > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  list-style: none;
+  justify-content: end;
+  justify-items: end;
+}
+nav a {
+  text-decoration: none;
+  color: var(--red);
 }
 
 nav {
-    padding: 20px 0;
-    background-color: var(--secondary-color);
-    color: white;
-    text-align: right;
+  padding: 8px;
+  border-bottom: 1px solid var(--gold);
+  border-top: 1px solid var(--gold);
+  padding-inline-end: 64px;
 }
 
-nav a {
-    padding: 0 20px;
+/* Book Stuff */
+.article-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+  padding-right: 16px;
+  padding-bottom: 32px;
 }
 
-.content-wrapper {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+.article-container h2 {
+  font-family: var(--headline-font);
+  font-size: 24px;
+  color: var(--red);
 }
 
-.book-card {
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-content: center;
+.article-info {
+  grid-column: 1 / 2;
+  border-right: 1px solid var(--gold);
+  text-align: right;
+  padding-right: 16px;
 }
 
-.filter-panel {
-    border: 2px solid var(--primary-color);
-    margin: 15px;
+.article-date {
+  font-size: 20px;
+  margin: 0;
+  margin-top: 12px;
 }
 
-.book-info {
-    border-right: 1px solid black;
-    padding: 10px;
+.article-title {
+  margin-top: 6px;
 }
 
-.book-details {
-    padding: 10px;
+.article-image {
+  display: grid;
+  margin: 0 auto;
+}
+
+/* Filters */
+#filters {
+  border: 1px solid var(--gold);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-size: 12px;
+  color: var(--dark);
+  padding-inline-start: 64px;
+  padding-inline-end: 64px;
+  border-top: 1px solid var(--gold);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

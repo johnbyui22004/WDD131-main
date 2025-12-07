@@ -1,0 +1,118 @@
+/* Google Fonts */
+@import url('[https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap](https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap)');
+
+:root {
+--primary-color: #7cb2ea;
+--secondary-color: #112A46;
+--accent1-color: #5F0F40;
+--accent2-color: white;
+
+--heading-font: "Fraunces", serif;
+--paragraph-font: "DM Sans", sans-serif;
+
+--headline-color-on-white: var(--primary-color);
+--headline-color-on-color: white;
+--paragraph-color: var(--primary-color);
+--paragraph-color-on-color: white;
+--paragraph-background-color: var(--primary-color);
+
+--nav-link-color: var(--primary-color);
+--nav-background-color: var(--secondary-color);
+--nav-hover-link-color: white;
+--nav-hover-background-color: var(--primary-color);
+}
+
+body {
+max-width: 1200px;
+margin: 0 auto;
+padding: 4em;
+font-size: 18px;
+}
+
+img {
+display: block;
+margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--heading-font);
+color: var(--headline-color-on-white);
+}
+
+h2 {
+text-align: center;
+}
+
+hr {
+height: 3px;
+margin: 35px 0;
+background: var(--accent1-color);
+}
+
+header {
+padding: 1em;
+text-align: center;
+background-color: var(--paragraph-background-color);
+}
+
+header h1, header h2 {
+color: var(--headline-color-on-color);
+}
+
+p {
+font-family: var(--paragraph-font);
+color: var(--paragraph-color);
+padding: 1em;
+}
+
+.colors {
+width: 100%;
+margin: 30px auto;
+text-align: center;
+}
+
+.colors th {
+background-color: #999;
+}
+
+.colors td {
+width: 25%;
+height: 3em;
+}
+
+.primary { background-color: var(--primary-color); }
+.secondary { background-color: var(--secondary-color); }
+.accent1 { background-color: var(--accent1-color); }
+.accent2 { background-color: var(--accent2-color); }
+
+p.colored {
+background-color: var(--paragraph-background-color);
+color: var(--paragraph-color-on-color);
+}
+
+nav {
+background-color: var(--nav-background-color);
+line-height: 3em;
+text-align: center;
+font-size: 1.2em;
+display: flex;
+justify-content: center;
+}
+
+nav a {
+min-width: 120px;
+padding: 10px;
+text-decoration: none;
+color: var(--nav-link-color);
+}
+
+nav a:hover {
+color: var(--nav-hover-link-color);
+background-color: var(--nav-hover-background-color);
+}
+
+.logo {
+width: 200px;
+height: 200px;
+margin-left: 0;
+}

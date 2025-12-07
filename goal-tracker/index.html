@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goal Tracker - Home</title>
+  <link rel="stylesheet" href="siteplan/site-plan.css">
+</head>
+
+<body>
+<header>
+  <h1>Goal Tracker</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="goal-details.html">Goal Details</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Your Goals</h2>
+
+  <section>
+    <h3>Add a New Goal</h3>
+    <form id="goal-form">
+      <input type="text" id="goal-title" placeholder="Goal Title" required>
+      <input type="text" id="goal-desc" placeholder="Description" required>
+      <button type="submit">Add Goal</button>
+    </form>
+  </section>
+
+  <section>
+    <h3>Goal List</h3>
+    <ul id="goal-list">
+      <!-- Goals will appear here -->
+    </ul>
+  </section>
+</main>
+
+<script type="module" src="js/home.js"></script>
+</body>
+</html>

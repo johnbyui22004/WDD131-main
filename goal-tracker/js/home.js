@@ -22,16 +22,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayGoals(){
     goalList.innerHTML = "";
+
     goals.forEach((goal, index) => {
       const li = document.createElement("li");
-      li.textContent = `${goal.title} - ${goal.desc}`;
-      li.style.textDecoration = goal.completed ? "line-through" : "none";
 
-      li.addEventListener("click", () => {
+      // Goal text
+      const text = document.createElement("span");
+      text.textContent = `${goal.title} - ${goal.desc}`;
+      text.style.textDecoration = goal.completed ? "line-through" : "none";
+
+      // Clicking text toggles completion
+      text.addEventListener("click", () => {
         goal.completed = !goal.completed;
-        li.style.textDecoration = goal.completed ? "line-through" : "none";
+        text.style.textDecoration = goal.completed ? "line-through" : "none";
         localStorage.setItem("goals", JSON.stringify(goals));
       });
+
+      // Remove button
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      removeBtn.classList.add("remove-btn");
+
+      removeBtn.addEventListener("click", (event) => {
+        event.stopPropagation(); // prevents goal from toggling when clicking remove
+        goals.splice(index, 1);
+        localStorage.setItem("goals", JSON.stringify(goals));
+        displayGoals();
+      });
+
+      li.appendChild(text);
+      li.appendChild(removeBtn);
 
       goalList.appendChild(li);
     });

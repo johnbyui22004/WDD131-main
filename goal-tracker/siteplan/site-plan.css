@@ -149,7 +149,7 @@ footer {
   border-radius: 8px;
 }
 
-/* Responsive layout */
+
 @media (max-width: 768px) {
   body {
     padding: 1em;
@@ -162,4 +162,13 @@ footer {
   ul li {
     font-size: 0.95em;
   }
+}
+
+.logo {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 48px;
+  height: auto;
+  z-index: 100;
 }
